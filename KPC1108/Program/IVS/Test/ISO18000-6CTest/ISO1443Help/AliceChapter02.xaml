@@ -1,0 +1,16 @@
+﻿<!-- =====================
+      AliceChapter02.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="勤奋">
+    <FlowDocumentReader ViewingMode="TwoPage">
+        <FlowDocument>     
+           
+            <Paragraph TextIndent="24">
+                电子标签的存储容量为1KB，整个存储结构划分为16个扇区（section），编号为0至15，一个扇区的的大小是64B。每个扇区又可以分为4块(Block)，编号分别为0至3，每个块的大小是16B。第个扇区的块3(即第4块)是一个特殊的夫，这个块包含了该扇区的密码A(6B)、存取控制码（4B）、密码B（6B），而其余3个块是一般的数据存储块。
+      扇区0的块0存储了卡的制造商代码，其中0至4字节为卡的序列号，第5字节为序列号的检验码，第6字节为卡的容量字字节。第7和第 8 字节为卡的类型号字节，其他字节由制造商自行定义。
+            </Paragraph>
+        </FlowDocument>
+       
+    </FlowDocumentReader>
+</Page>

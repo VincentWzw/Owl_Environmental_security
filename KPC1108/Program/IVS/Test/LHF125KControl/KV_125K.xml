@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KV_125K</name>
+    </assembly>
+    <members>
+        <member name="T:KV_125K.Control">
+            <summary>
+            门禁控制器类(成华清 2015/07/26创建)
+            </summary>
+        </member>
+        <member name="F:KV_125K.Control._IsOpen">
+            <summary>
+            是否打开串口
+            </summary>
+        </member>
+        <member name="P:KV_125K.Control.IsOpen">
+            <summary>
+            是否打开串口
+            </summary>
+        </member>
+        <member name="T:KV_125K.Control.DelegateDataSend">
+            <summary>
+            发送数据委托
+            </summary>
+            <param name="Data"></param>
+        </member>
+        <member name="E:KV_125K.Control.EventDataSend">
+            <summary>
+            发送数据事件
+            </summary>
+        </member>
+        <member name="E:KV_125K.Control.EventHexData">
+            <summary>
+            接收十六进制标签
+            </summary>
+        </member>
+        <member name="E:KV_125K.Control.EventDataWg">
+            <summary>
+            接受韦根数据事件
+            </summary>
+        </member>
+        <member name="E:KV_125K.Control.EventData">
+            <summary>
+            发送数据
+            </summary>
+        </member>
+        <member name="M:KV_125K.Control.ClosePort">
+            <summary>
+            关闭串口
+            </summary>
+            <returns>空字符串为成功，其他失败</returns>
+        </member>
+        <member name="M:KV_125K.Control.Receive">
+            <summary>
+            读取数据
+            </summary>
+        </member>
+        <member name="M:KV_125K.Control.RcvFrame">
+            <summary>
+            串口从读写器读取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KV_125K.Control.SendAFrame(System.String)">
+            <summary>
+            串口向读写器发送命令
+            </summary>
+            <param name="Command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KV_125K.Control.InsertID(System.String)">
+            <summary>
+            将卡号写入到门禁控制器中
+            </summary>
+            <param name="ID"></param>
+        </member>
+        <member name="M:KV_125K.Control.DeleteID(System.String)">
+            <summary>
+            将卡号从门禁控制器中删除
+            </summary>
+            <param name="ID"></param>
+        </member>
+        <member name="M:KV_125K.Control.GetAllID">
+            <summary>
+            获取全部卡号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KV_125K.Control.GetAllRecorf">
+            <summary>
+            获取全部开门记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KV_125K.Reader">
+            <summary>
+            王子玉 20140822 创建
+            </summary>
+        </member>
+        <member name="F:KV_125K.Reader.serialport">
+            <summary>
+            串口对象
+            </summary>
+        </member>
+        <member name="E:KV_125K.Reader.eventHex">
+            <summary>
+            接收Hex数据事件
+            </summary>
+        </member>
+        <member name="E:KV_125K.Reader.eventWG">
+            <summary>
+            接收韦根数据事件
+            </summary>
+        </member>
+        <member name="E:KV_125K.Reader.eventZero">
+            <summary>
+            接收全零数据事件
+            </summary>
+        </member>
+        <member name="M:KV_125K.Reader.OpenPort(System.String,System.Int32)">
+            <summary>
+            打开串口
+            </summary>
+            <param name="PortName">串口号</param>
+            <param name="BaudRate">波特率，最佳9600</param>
+            <returns>空字符串为成功，其他失败</returns>
+        </member>
+        <member name="M:KV_125K.Reader.StopPort">
+            <summary>
+            停止串口
+            </summary>
+            <returns>空字符串为成功，其他失败</returns>
+        </member>
+        <member name="M:KV_125K.Reader.ClosePort">
+            <summary>
+            关闭串口
+            </summary>
+        </member>
+        <member name="M:KV_125K.Reader.Receive">
+            <summary>
+            接收一次数据
+            </summary>
+        </member>
+    </members>
+</doc>

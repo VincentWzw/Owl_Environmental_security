@@ -1,0 +1,344 @@
+﻿<!-- =====================
+      AliceChapter03.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="坚持">
+    <FlowDocumentReader ViewingMode="TwoPage">
+        <FlowDocument>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                ISO/IEC 14443编程接口说明文档
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                库文件：FR102DLL.dll
+
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                版本：1.0.0.0
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                库文件：FR102DLL.dll
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                版权所有：北京京胜世纪科技有限公司
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                公共函数：
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                1、public Byte OpenSerialPort(String portName)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：打开串口；
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：portName为串口号,如"COM1";串口打开时采用设备默认配置:波特率9600;数据位8;停止位1;奇偶校验无.
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：打开成功返回0x00，打开失败返回0x01；
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte value=Reader.OpenSerialPort("COM1")
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                注：示例中的Reader为FR102Reader类的一个实例，下同。
+            </Paragraph>
+
+
+            <Paragraph TextIndent="24">
+                2、public Byte CloseSerialPort()
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：关闭串口
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：无
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：关闭成功返回0x00，关闭失败返回0x01
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte value= Reader.CloseSerialPort()
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                3、public Byte TestReader()
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：检测设备是否已经连接到当前打开的串口;建议在每次打开串口后立即进行检查
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：无
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：连接成功返回0x00，连接失败返回0x01
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte value= Reader.TestReader ()
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                4、public Byte RestartReader ()
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：重新启动FR102读写器设备;建议在设备连接成功后，进行读写器相关操作前重启设备
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：无
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：连接成功返回0x00，连接失败返回0x01
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte value= Reader.RestartReader ()
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                5、public Byte ChangeBaudRate(Int32 BaudRate )
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：修改串口波特率；缺省的波特率为9600，如果需要修改波特率，建议在重启设备（调用完RestartReader命令）后进行。如果修改了串口的波特率，则特别注意在程序结束运行之前一定要关闭串口，否则可能需要重新插拔读写器才能让其正常运行
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：BaudRate，波特率
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：修改成功返回0x00，修改失败返回0x0B
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte value= Reader. ChangeBaudRate (9600)
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                6、public Byte PcdRequest(Byte req_code, ref Byte[] TagType)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：请求命令，在每次寻卡之前必须运行Request命令，以便启动卡片上的ARQ（请求应答）模块，建立卡片与读写器的通信链路
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数1：req_code，请求模式，. req_code=0x26,Request Idle,寻天线区内未休眠的卡片; req_code=0x52,Request All,寻天线场区内所有卡;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数2：TagType，卡片类型，该参数为引用参数，用于接收函数的返回值，正常情况下返回的值（字节数组）长度为2Byte，如0x00 02。特别注意，在调用该函数前，一定先对该参数进行初始化，以便系统为之分配内存空间，在函数运行时存放返回值。
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：请求成功返回0x00，请求失败返回0x03，读写器天线场区无卡返回0x02
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例： Byte[] data = new Byte[2];
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdRequest(0x52, ref data);
+
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                7、public Byte PcdAnticoll(ref Byte[] Snr)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：防冲突命令，用以获得天线场区内卡片的序列号；该版本的类库尚未实现读多卡的功能，因此在使用该命令时需保证场区内只有一张Mifare卡。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：Snr，卡片序列号，引用参数，正常情况下返回的值长度为5Byte，其中前4个字节为卡片序列号，第5个字节为偶校验码，可用以验证序列号的正确性。
+
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                返回值：防冲突成功返回0x00，请求失败返回0x05；
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例： Byte[] data = new Byte[5];
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdAnticoll(ref data)
+
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                8、public Byte PcdSelect(Byte[] Snr)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：选择（激活）命令，用以选定参数指定的卡片，以便进行进一步的操作（如认证）。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：Snr，卡片序列号，注意不是引用参数，长度为5Byte，其中前4个字节为卡片序列号，第5个字节为偶校验码。
+
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                返回值：激活成功返回0x00，激活失败返回0x06
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例： Byte[] Snr = new Byte[5] {0x00,0x01,0x02,0x03, 0x00}; //序列号为0x 00 01 02 03
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdSelect(Snr);
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                9、public Byte PcdAuthState(Byte auth_mode, Byte addr, Byte[] Key, Byte[] Snr)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：认证命令，用以对指定卡片的指定数据块进行认证，以便进行进一步的操作（如读/写操作，必须先通过认证后方可进行）。Mifare卡存储介质共16个扇区，每扇区4个块（Block），每块16字节，其中每个扇区的最后一个块由密钥A、存取控制和密钥B构成，用于对该扇区的数据进行存取控制。详见Mifare卡存储结构和存取控制。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数1：auth_mode，认证模式，auth_mode=0x60为认证密钥A; auth_mode=0x61为认证密钥B;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数3：Key，密钥，长度6Byte;
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数3：Key，密钥，长度6Byte;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数4：Snr，卡片序列号，长度5（或者4个，可以没有第五个字节的偶校验）Byte;
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                返回值：认证成功返回0x00，认证失败返回0x08；
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                示例： Byte[] Snr = new Byte[5] {0x00,0x01,0x02,0x03}; //序列号为0x 00 01 02 03
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte[] KeyA = new Byte[6] {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }; //默认密钥
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdAuthState(0x60, 0x02, KeyA, Snr);//认证密钥A
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                10、public Byte PcdRead(Byte addr, ref Byte[] Read_data)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：读取命令，用以读取指定数据块的数据，必须在通过必要的认证后执行。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数1：addr，块地址;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数2：Read_data，引用类型，长度16Byte，用以存放读到的数据;
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：读取成功返回0x00，读取失败返回0x09；</Paragraph>
+            <Paragraph TextIndent="24">
+                示例：Byte[] data_Read = new Byte[16];
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdRead(addr, ref data_Read);
+
+            </Paragraph>
+
+
+            <Paragraph TextIndent="24">
+                11、public Byte PcdWrite(Byte addr, Byte[] Write_data)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：写入命令，用以向指定的数据块写入数据，必须在通过必要的认证后执行。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数1：addr，块地址;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数2：Write_data，长度16Byte，用以存放需要写入的数据;
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：写入成功返回0x00，写入失败返回0x0A；
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                示例：示例：Byte[] Write_data = new Byte[16];
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                for (Byte i = 0; i〈16; i++) { Write_data [i]=(Byte)i;}
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                Byte value = Reader.PcdRead(addr, ref data_Read);
+
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                12、public Byte PcdHalt()
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：休眠命令，让当前选定的卡片进入休眠状态，必须在通过必要的认证后执行。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：无;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：休眠成功返回0x00，休眠失败返回0x07；
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                示例：Byte value = Reader. PcdHalt();
+            </Paragraph>
+
+
+            <Paragraph TextIndent="24">
+                13、public void BuzzerEnable(Boolean flag)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：板载蜂鸣器使能（开启/关闭）命令
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：flag，布尔型标识，flag=true表示开启蜂鸣器，flag=false表示关闭蜂鸣器;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：无；
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                示例：Reader.BuzzerEnable(checkBox1.Checked);
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                14、public void LEDActEnable (Boolean flag)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：板载LED灯动作使能（开启/关闭）命令。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：flag，布尔型标识，flag=true表示开启LED灯，flag=false表示关闭LED灯;
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：无；
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                示例：Reader.LEDActEnable(checkBox2.Checked);
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                15.public void LEDUserEnable (Boolean flag)
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                描述：板载LED灯用户使能（开启/关闭）命令。
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                参数：flag，布尔型标识，flag=true表示开启LED灯，flag=false表示关闭LED灯
+
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                返回值：无；
+            </Paragraph>
+
+            <Paragraph TextIndent="24">
+                示例：Reader. LEDUserEnable (checkBox2.Checked);
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

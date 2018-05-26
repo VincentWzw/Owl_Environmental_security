@@ -1,0 +1,1172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSN_GRIP_dll</name>
+    </assembly>
+    <members>
+        <member name="P:WSN_GRIP_dll.GRIP_DataType.Data">
+            <summary>
+            数据byte数组
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_DataType.GetDataTypeSendBytes">
+            <summary>
+            获取要发送的DataType类型数据byte数组
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_DataType.GetDataTypeReciveBytes(System.Byte[])">
+            <summary>
+            获取接收到的byte数组转换为DataType类型数据
+            </summary>
+            <param name="srcBytes">Data数组</param>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_DeviceStatus.APP_INIT">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_DeviceStatus.APP_START">
+            <summary>
+            已启动并已加入网络
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_DeviceStatus.APP_BOUND">
+            <summary>
+            已绑定
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_DeviceStatus.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_SUCCESS">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_ADDR_ERR">
+            <summary>
+            地址错
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_CONF_DATA_ERR">
+            <summary>
+            配置数据错
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_WRITE_NV_FAILED">
+            <summary>
+            闪存写入失败
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_WRITE_SENSOR_FAILED">
+            <summary>
+            写传感器失败
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_ErrorID.NWM_RADIO_SEND_FAILED">
+            <summary>
+            射频发送失败
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_EventID.DeviceStartedEvent">
+            <summary>
+            启动事件
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_EventID.NWMConfigChangedEvent">
+            <summary>
+            节点配置修改事件
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_EventID.NWMCommandFailedEvent">
+            <summary>
+            命令执行失败事件
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_EventID.NWMReadSensorFailedEvent">
+            <summary>
+            读传感器失败
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_EventID.NWMRadioSendFailedEvent">
+            <summary>
+            Radio发送失败
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody.bodyLength">
+            <summary>
+            消息体长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody.messageBody">
+            <summary>
+            消息体byte数组
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody.BodyLength">
+            <summary>
+            消息体长度
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody.MessageBody">
+            <summary>
+            消息体byte数组
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody.#ctor(WSN_GRIP_dll.GRIP_MessageHead,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="head">消息头</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read.#ctor(System.Byte,System.Collections.Generic.List{WSN_GRIP_dll.GRIP_Node})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="deviceCount">查询设备数量</param>
+            <param name="nodeList">节点集合</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Config_Read_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Config_Read_Resp.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read_Resp.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Read_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Write.#ctor(System.Byte,WSN_GRIP_dll.GRIP_NodeConfigInfo,System.Collections.Generic.List{WSN_GRIP_dll.GRIP_Node})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="deviceCount">设备数量</param>
+            <param name="nodeConfigInfo">节点配置数据</param>
+            <param name="nodeList">节点集合</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Write.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Write.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Config_Write_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Config_Write_Resp.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Write_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Config_Write_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.EventID">
+            <summary>
+            事件码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.SessionID">
+            <summary>
+            会话ID,EventID等于NWMCommandFailedEvent时有效
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.ErrorNum">
+            <summary>
+            错误码,EventID等于NWMCommandFailedEvent时有效
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.EventDataLength">
+            <summary>
+            事件信息长度
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.EventData">
+            <summary>
+            事件信息
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report_Resp.#ctor(System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="status">错误码</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Event_Report_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping.#ctor(System.String,System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iEEEAddress">节点编号，0表示检测所有节点的状态</param>
+            <param name="shortAddress">节点地址</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping.#ctor(WSN_GRIP_dll.GRIP_MessageHead,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="head">消息头</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.#ctor(System.Byte[],System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Ping_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read.#ctor(System.Byte,System.Byte,System.UInt16,System.Collections.Generic.List{WSN_GRIP_dll.GRIP_Node})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="deviceCount">设备数量</param>
+            <param name="sensorClass">传感器类型编号</param>
+            <param name="sensorType">传感器型号编号</param>
+            <param name="nodeList">节点集合</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read.#ctor(WSN_GRIP_dll.GRIP_MessageHead,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="head">消息头</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read_Resp.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read_Resp.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Read_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.Cause">
+            <summary>
+            报告触发原因，0x01为网关触发，0x02为节点触发
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.SessionID">
+            <summary>
+            会话ID，Cause等于0x01时有效。
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.DataType">
+            <summary>
+            数据种类，0x01为传感器采集（或执行器）数据，0x02为节点配置数据
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.Data">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.GetSensorReportDataType(System.Byte)">
+            <summary>
+            获取数据类型byte数据
+            </summary>
+            <param name="dataType">数据类型</param>
+            <returns>数据类型byte数据</returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report_Resp.#ctor(System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Report_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write.#ctor(System.Byte,System.Byte,System.UInt16,System.Byte,System.Byte[],System.Collections.Generic.List{WSN_GRIP_dll.GRIP_Node})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="deviceCount">设备数量</param>
+            <param name="sensorClass">传感器类别编号</param>
+            <param name="sensorType">传感器型号编号</param>
+            <param name="dataLength">数据长度</param>
+            <param name="data">数据</param>
+            <param name="nodeList">节点集合</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write.#ctor(WSN_GRIP_dll.GRIP_MessageHead,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="head">消息头</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write_Resp.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write_Resp.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Sensor_Write_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.Node">
+            <summary>
+            设备节点
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.Cause">
+            <summary>
+            报告触发原因，0x01为网关触发，0x02为节点触发
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.SessionID">
+            <summary>
+            会话ID，Cause等于0x01时有效
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.DeviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.Status">
+            <summary>
+            设备状态
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.PanID">
+            <summary>
+            PanID
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.ParentNode">
+            <summary>
+            上级节点设备
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.SensorEnable">
+            <summary>
+            传感器是否有效，0为无效，1为有效，值为0表示传感器停止工作。协调器时该字段无效
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.SensorClass">
+            <summary>
+            传感器类型编号，协调器时该字段无效。
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.SensorType">
+            <summary>
+            传感器型号编号，协调器时该字段无效。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report_Resp.#ctor(System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Status_Report_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageHead.MessageLength">
+            <summary>
+            消息体长度
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageHead.MessageCommand">
+            <summary>
+            命令字
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageHead.SequenceID">
+            <summary>
+            消息流水号
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageHead.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageHead.#ctor(System.UInt16,System.UInt16,System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="messageLength">消息体长度</param>
+            <param name="messageCommand">命令字</param>
+            <param name="sequenceID">消息流水号</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageHead.GetHeadBytesOfSend">
+            <summary>
+            获取发送消息头的byte数组格式。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <returns>转换的要发送的消息头的byte数组</returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageHead.GetHeadBytesOfRecive(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            获取接收消息的消息头。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+            <param name="offset">偏移量</param>
+            <param name="length">长度</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_Message.SenquenceID">
+            <summary>
+            消息流水号
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Message.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Message.GetSequenceID">
+            <summary>
+            获取消息流水号的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Message.GetStatus(System.UInt16)">
+            <summary>
+            获取接收到的信息的Status状态
+            </summary>
+            <param name="status">Status值</param>
+            <returns>Status值代表的状态</returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Message.GetSendMessage(WSN_GRIP_dll.GRIP_MessageHead,WSN_GRIP_dll.GRIP_MessageBody)">
+            <summary>
+            获取发送的数据包的byte数组
+            </summary>
+            <param name="messageHeadSend">数据包消息头</param>
+            <param name="messageBodySend">数据包消息体</param>
+            <returns></returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Message.GetReciveMessage(System.Byte[],WSN_GRIP_dll.GRIP_MessageHead,WSN_GRIP_dll.GRIP_MessageBody)">
+            <summary>
+            获取接收的数据包信息
+            </summary>
+            <param name="recvSrc">接收到的数据包byte数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect.#ctor(System.Byte,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="type">连接类型，0代表T1通道，1代表T2通道</param>
+            <param name="appID">应用服务标识号，由网关分配，范围为1000-9999</param>
+            <param name="password">鉴权信息</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect.#ctor(WSN_GRIP_dll.GRIP_MessageHead,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="head">消息头</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect.GetAuth">
+            <summary>
+            计算鉴权信息
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_MessageBody_Connect_Resp.Status">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect_Resp.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect_Resp.ConvertToSendBytes">
+            <summary>
+            将消息体转换为要发送的byte数组格式方法。按照本地字节和网络字节的顺序转换。
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_MessageBody_Connect_Resp.ConvertReciveBytes(System.Byte[])">
+            <summary>
+            转换接收到的消息体。按照本地字节和网络字节的顺序转换。
+            </summary>
+            <param name="recvSrc">接收到的消息byte数组</param>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.HEADLENGTH">
+            <summary>
+            消息头长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONNECT_LENGTH">
+            <summary>
+            应用向网关发起连接请求长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONNECT_RESP_LENGTH">
+            <summary>
+            连接请求响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.PING_LENGTH">
+            <summary>
+            链路检测命令长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.PING_REST_LENGTH">
+            <summary>
+            链路检测命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONFIG_READ_LENGTH">
+            <summary>
+            节点配置读取命令，一个节点字节长度为10，该消息体长度为1个字节的节点数量+节点数量CONFIG_READ_LENGTH
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONFIG_READ_RESP_LENGTH">
+            <summary>
+            节点配置读取命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONFIG_WRITE_LENGTH">
+            <summary>
+            节点配置写入命令，一个节点字节长度为10，该消息体长度为1个字节的节点数量+节点数量CONFIG_WRITE_LENGTH+节点配置数据长度。
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONFIG_WRITE_RESP_LENGTH">
+            <summary>
+            节点配置写入命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_READ_LENGTH">
+            <summary>
+            读取数据命令长度，一个节点字节长度为10，该消息体长度为1个字节的节点数量+1个字节的传感器类别编号+2个字节的传感器型号编号+节点数量SENSOR_READ_LENGTH。
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_READ_RESP_LENGTH">
+            <summary>
+            读取数据命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_WRITE_LENGTH">
+            <summary>
+            写入数据命令长度，一个节点字节长度为10，该消息体长度为1个字节的节点数量+1个字节的传感器类别编号+2个字节的传感器型号编号+1个字节的数据长度+数据长度+节点数量SENSOR_READ_LENGTH。
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_WRITE_RESP_LENGTH">
+            <summary>
+            写入数据命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_REPORT_LENGTH">
+            <summary>
+            节点数据报告命令长度，长度为SENSOR_REPORT_LEGTH+Data长度（DataType=0x01时，为SensorData；DataType=0x02时，为ConfigInfo）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSOR_REPORT_RESP_LENGTH">
+            <summary>
+            节点数据报告命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.STATUS_REPORT_LENGTH">
+            <summary>
+            节点状态报告命令长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.STATUS_REPORT_RESP_LENGTH">
+            <summary>
+            节点状态报告命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.SENSORDATA_LENGTH">
+            <summary>
+            传感数据项长度，长度为SENSORDATA_LENGTH+传感数据长度（SensorDataLength）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.CONFIGINFO_LENGTH">
+            <summary>
+            节点配置项长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.EVENT_REPORT_LENGTH">
+            <summary>
+            节点事件报告命令长度，不包括EventData长度。
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_MessageBody_Length.EVENT_REPORT_RESP_LENGTH">
+            <summary>
+            节点事件报告命令响应长度
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_PING">
+            <summary>
+            链路检测命令。此命令将引发一个NWM_STATUS_REPORT,上报原因填写网关引发。（网关->节点，或应用->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_PING_RESP">
+            <summary>
+            链路检测命令响应。（节点->网关或网关->应用）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONFIG_READ">
+            <summary>
+            节点配置读取命令。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONFIG_READ_RESP">
+            <summary>
+            节点配置读取命令响应（节点->网关）。
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONFIG_WRITE">
+            <summary>
+            节点配置写入命令，此命令将引发一个节点配置修改事件上报，原因为网关修改。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONFIG_WRITE_RESP">
+            <summary>
+            节点配置写入命令响应。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_READ">
+            <summary>
+            读取数据命令，此命令将引发一个NWM_SENSOR_REPORT，网关可采用此命令主动读取传感器数据或执行器数据。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_READ_RESP">
+            <summary>
+            读取数据命令相应。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_WRITE">
+            <summary>
+            写入数据命令，此命令如果写入失败将引发一个命令执行失败事件上报，原因为网关写入失败。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_WRITE_RESP">
+            <summary>
+            写入数据命令响应。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_REPORT">
+            <summary>
+            节点数据报告命令。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_SENSOR_REPORT_RESP">
+            <summary>
+            节点数据报告命令响应。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_STATUS_REPORT">
+            <summary>
+            节点状态报告命令，报告节点当前状态及配置信息。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_STATUS_REPORT_RESP">
+            <summary>
+            节点状态报告命令响应。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_DEBUG_REPORT">
+            <summary>
+            节点调试信息报告命令，应用中不建议使用该命令。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_DEBUG_REPORT_RESP">
+            <summary>
+            节点调试信息报告命令相应。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_EVENT_REPORT">
+            <summary>
+            节点事件报告命令。（节点->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_EVENT_REPORT_RESP">
+            <summary>
+            节点事件报告命令响应。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONNECT">
+            <summary>
+            应用向网关发起连接请求。（应用->网关）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_CONNECT_RESP">
+            <summary>
+            连接请求响应。（网关->应用）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_HEARTBEAT">
+            <summary>
+            心跳（消息为空）。（网关->节点）
+            </summary>
+        </member>
+        <member name="F:WSN_GRIP_dll.GRIP_Message_CommandID.NWM_HEARTBEAT_RESP">
+            <summary>
+            心跳相应（消息体为空）。（节点->网关）
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_Node.IEEEAddress">
+            <summary>
+            节点编号
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_Node.ShortAddress">
+            <summary>
+            节点地址
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Node.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Node.#ctor(System.String,System.UInt16)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iEEEAddress">节点编号</param>
+            <param name="shortAddress">节点地址</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.DeviceConfigFlag">
+            <summary>
+            节点配置标志，0为未配置，1为以配置。1个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.DeviceName">
+            <summary>
+            节点名称。32个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.NetWorkKey">
+            <summary>
+            网络标识。网关使用该值确定是否允许节点加入网络；节点或路由器使用该值请求加入网络。16个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.PanID">
+            <summary>
+            PanID。2个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorEnable">
+            <summary>
+            传感器是否有效，0为无效，1为有效。该值为0表示传感器停止工作。协调器时该字段无效。1个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorClass">
+            <summary>
+            传感器类别，
+            传感器类型编码采用3字节长度编码，编码分两部分：第一部分长为1个字节，表示传感器分类（如温感类），从0x00开始编号；
+            第二部分长2个字节，表示传感器型号编码，从0x0000开始编号。
+            协调器时该字段无效。1个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorType">
+            <summary>
+            传感器型号。
+            传感器类型编码采用3字节长度编码，编码分两部分：第一部分长为1个字节，表示传感器分类（如温感类），从0x00开始编号；
+            第二部分长2个字节，表示传感器型号编码，从0x0000开始编号。
+            协调器时该字段无效。2个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorReprotPeriod">
+            <summary>
+            上报周期，单位为秒，协调器时该字段无效。2个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorConfigDataLength">
+            <summary>
+            传感器配置数据长度，小于等于128。协调器时该字段无效。1个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.SensorConfigData">
+            <summary>
+            传感器配置数据，节点或路由器使用该数据初始化传感器。该数据由传感器和上层应用负责解释。协调器时该字段无效。128个字节
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_NodeConfigInfo.IsCoordinator">
+            <summary>
+            是否为协调器
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_NodeConfigInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_NodeConfigInfo.GetDataTypeSendBytes">
+            <summary>
+            获取要发送的DataType类型数据byte数组
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_NodeConfigInfo.GetDataTypeReciveBytes(System.Byte[])">
+            <summary>
+            获取接收到的byte数组转换为DataType类型数据
+            </summary>
+            <param name="srcBytes">Data数组</param>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.SensorClass">
+            <summary>
+            传感器类别编号
+            传感器类型编码采用3字节长度编码，编码分两部分：第一部分长为1个字节，表示传感器分类（如温感类），从0x00开始编号；
+            第二部分长2个字节，表示传感器型号编码，从0x0000开始编号。
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.SensorType">
+            <summary>
+            传感器型号编号
+            传感器类型编码采用3字节长度编码，编码分两部分：第一部分长为1个字节，表示传感器分类（如温感类），从0x00开始编号；
+            第二部分长2个字节，表示传感器型号编码，从0x0000开始编号。
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.SensorDataLength">
+            <summary>
+            传感器数据长度
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.SensorData">
+            <summary>
+            传感数据
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Value">
+            <summary>
+            数码管显示值
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.LED">
+            <summary>
+            LED灯状态
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Time">
+            <summary>
+            LED灯闪烁时长
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Temp_H">
+            <summary>
+            温度值整数位，范围为-40-100，单位摄氏度
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Temp_L">
+            <summary>
+            温度值小数位，范围0-99
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Humi_H">
+            <summary>
+            湿度整数位，范围0-99，单位%
+            </summary>
+        </member>
+        <member name="P:WSN_GRIP_dll.GRIP_SensorData.Humi_L">
+            <summary>
+            湿度小数位，范围10-99
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.GetDataTypeSendBytes">
+            <summary>
+            获取传感数据项要发送的byte数组
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.GetDataTypeReciveBytes(System.Byte[])">
+            <summary>
+            获取接收到的byte数组转换为DataType类型数据
+            </summary>
+            <param name="srcByte">Data数组</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.SetSensorData_LED(System.UInt16,System.Byte,System.UInt16)">
+            <summary>
+            设置数码管显示
+            </summary>
+            <param name="value">数码管显示数据</param>
+            <param name="led">LED灯状态，0为off，1为on，2为flash</param>
+            <param name="time">LED等闪烁时长，当LED值为2时有效</param>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.GetSensorData_LED">
+            <summary>
+            获取数码管显示数值
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_SensorData.GetSensorData_SHT">
+            <summary>
+            获取温湿度节点值
+            </summary>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Tools.StrToHexBytes(System.String,System.Int32)">
+            <summary>
+            字符串转换为16进制字节数组
+            </summary>
+            <param name="strScr"></param>
+            <param name="bytesLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Tools.StrFormatToHexBytes(System.String,System.Int32)">
+            <summary>
+            字符串转换为16进制字节数组
+            </summary>
+            <param name="strScr"></param>
+            <param name="bytesLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Tools.BytesToHexStr(System.Byte[])">
+            <summary>
+            字节数组转换为16进制字符串
+            </summary>
+            <param name="bytesSrc">要转换的字节数组</param>
+            <returns>16进制带格式字符串</returns>
+        </member>
+        <member name="M:WSN_GRIP_dll.GRIP_Tools.BytesToHexStrFormat(System.Byte[])">
+            <summary>
+            字节数组转换为16进制字符串（带格式）
+            </summary>
+            <param name="bytesSrc">要转换的字节数组</param>
+            <returns>16进制带格式字符串，格式为加“-”</returns>
+        </member>
+    </members>
+</doc>

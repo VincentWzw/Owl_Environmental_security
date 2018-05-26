@@ -1,0 +1,50 @@
+﻿<!-- =====================
+      BookReaderPage.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      WindowTitle="Book Reader">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="90*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="75*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Frame for table of contents. -->
+            <!--<Frame Grid.Column="0" Name="frameContents" Source="AliceInWonderland.xaml" />-->
+            <StackPanel TextBlock.FontSize="10pt" Grid.Column="0">
+                <TextBlock Margin="12 12 12 6">
+            <Hyperlink NavigateUri="AliceChapter01.xaml"
+                       TargetName="frameChapter">
+               操作流程
+            </Hyperlink>
+                </TextBlock>
+                <TextBlock Margin="12 6 12 6">
+            <Hyperlink NavigateUri="AliceChapter02.xaml"
+                       TargetName="frameChapter">
+               卡片简介
+            </Hyperlink>
+                </TextBlock>
+                <TextBlock Margin="12 6 12 6" >
+            <Hyperlink NavigateUri="AliceChapter03.xaml"
+                       TargetName="frameChapter">
+               编程接口说明
+            </Hyperlink>
+                </TextBlock>
+
+            </StackPanel>
+
+            <GridSplitter Grid.Column="1" Width="6"
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Stretch" />
+            <!-- Frame for the actual text. -->
+            <Frame Grid.Column="2" Name="frameChapter" Source="AliceChapter01.xaml" />
+        </Grid>
+    </Grid>
+</Page>
